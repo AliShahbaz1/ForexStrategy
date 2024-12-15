@@ -10,7 +10,7 @@ $reason = $_POST['reason'];
 $sql = "INSERT INTO cases (date, time, buy_sell, win_loss, reason) VALUES ('$date', '$time', '$buy_sell', '$win_loss', '$reason')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: index.html");
+    header("Location: index.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

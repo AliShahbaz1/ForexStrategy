@@ -16,7 +16,7 @@ $case = $conn->query("SELECT * FROM cases WHERE id = $id")->fetch_assoc();
 <body>
     <header>
         <h1>Case Details</h1>
-        <a href="index.html">Back to Home</a>
+        <a href="index.php">Back to Home</a>
     </header>
     <main>
         <p><strong>Date:</strong> <?php echo $case['date']; ?></p>

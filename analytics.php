@@ -19,7 +19,7 @@ $lossCount = $conn->query("SELECT COUNT(*) AS count FROM cases WHERE win_loss = 
     <header>
         <h1>Analytics</h1>
         <nav>
-            <a href="index.html">Back to Dashboard</a>
+            <a href="index.php">Back to Dashboard</a>
         </nav>
     </header>
     <main>

@@ -16,7 +16,7 @@ $case = $conn->query("SELECT * FROM cases WHERE id = $id")->fetch_assoc();
 <body>
     <header>
         <h1>Edit Case</h1>
-        <a href="index.html">Back to Home</a>
+        <a href="index.php">Back to Home</a>
     </header>
     <main>
         <form action="update_case.php" method="POST">
