@@ -26,26 +26,32 @@
 
             <label for="trend_15m">15m Trend:</label>
             <select name="trend_15m" required>
+                <option value="N/A">N/A</option>
                 <option value="Bullish">Bullish</option>
                 <option value="Bearish">Bearish</option>
+                <option value="Unknown">Unknown</option>
             </select>
+            
 
             <label for="trend_5m">5m Trend:</label>
             <select name="trend_5m" required>
                 <option value="Bullish">Bullish</option>
                 <option value="Bearish">Bearish</option>
+                <option value="Unknown">Unknown</option>
             </select>
 
             <label for="trend_1m">1m Trend:</label>
             <select name="trend_1m" required>
                 <option value="Bullish">Bullish</option>
                 <option value="Bearish">Bearish</option>
+                <option value="Unknown">Unknown</option>
             </select>
 
             <label for="pricing">Pricing (P/D):</label>
             <select name="pricing" required>
                 <option value="Premium">Premium</option>
                 <option value="Discount">Discount</option>
+                <option value="Fair">Fair</option>
             </select>
 
             <label for="buy_sell">Buy/Sell:</label>
@@ -58,6 +64,7 @@
             <select name="win_loss" required>
                 <option value="Win">Win</option>
                 <option value="Loss">Loss</option>
+                <option value="BE">BE</option>
             </select>
 
             <label for="reason">Reason:</label>
@@ -73,6 +80,7 @@
             <select name="supply_demand" required>
                 <option value="Supply">Supply</option>
                 <option value="Demand">Demand</option>
+                <option value="N/A">N/A</option>
             </select>
 
             <label for="candle_break">Strong/Weak 5m Candle Break:</label>
