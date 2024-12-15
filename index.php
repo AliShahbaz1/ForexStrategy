@@ -42,30 +42,39 @@ include 'database.php';
                 <?php
                 // Query to fetch all case study records
                 $cases = $conn->query("SELECT * FROM cases ORDER BY id DESC");
-                
+
                 // Check if records exist
                 if ($cases->num_rows > 0) {
                     while ($case = $cases->fetch_assoc()) {
+                        $trend_15m = $case['trend_15m'] ?? 'N/A';
+                        $trend_5m = $case['trend_5m'] ?? 'N/A';
+                        $trend_1m = $case['trend_1m'] ?? 'N/A';
+                        $pricing = $case['pricing'] ?? 'N/A';
+                        $max_pips = isset($case['max_pips']) ? $case['max_pips'] . ' pips' : 'N/A';
+                        $sl = isset($case['sl']) ? $case['sl'] . ' pips' : 'N/A';
+                        $supply_demand = $case['supply_demand'] ?? 'N/A';
+                        $candle_break = $case['candle_break'] ?? 'N/A';
+
                         echo "<tr>
                                 <td>{$case['date']}</td>
                                 <td>{$case['time']}</td>
-                                <td>{$case['trend_15m']}</td>
-                                <td>{$case['trend_5m']}</td>
-                                <td>{$case['trend_1m']}</td>
-                                <td>{$case['pricing']}</td>
+                                <td>{$trend_15m}</td>
+                                <td>{$trend_5m}</td>
+                                <td>{$trend_1m}</td>
+                                <td>{$pricing}</td>
                                 <td>{$case['buy_sell']}</td>
                                 <td>{$case['win_loss']}</td>
                                 <td>{$case['reason']}</td>
-                                <td>{$case['max_pips']} pips</td>
-                                <td>{$case['sl']} pips</td>
-                                <td>{$case['supply_demand']}</td>
-                                <td>{$case['candle_break']}</td>
+                                <td>{$max_pips}</td>
+                                <td>{$sl}</td>
+                                <td>{$supply_demand}</td>
+                                <td>{$candle_break}</td>
                                 <td>
                                     <a href='view_case.php?id={$case['id']}'>View</a> | 
                                     <a href='edit_case.php?id={$case['id']}'>Edit</a> | 
                                     <a href='delete_case.php?id={$case['id']}' onclick=\"return confirm('Are you sure you want to delete this case?');\">Delete</a>
                                 </td>
-                              </tr>";
+                            </tr>";
                     }
                 } else {
                     echo "<tr><td colspan='14'>No case studies available.</td></tr>";
